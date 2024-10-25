@@ -38,9 +38,9 @@ To set up the NowcastingGPT-EVL model on your system, follow these steps:
    Now install the following (important to run separately to avoid error)-
 	``` bash
       conda install pytorch=1.11.0
-	   conda install torchvision==0.12.0
+      conda install torchvision==0.12.0
       pip install torchaudio==0.11.0
-	   pip install torchmetrics==0.11.4
+      pip install torchmetrics==0.11.4
    ```
    
    Then install the other dependencies via
