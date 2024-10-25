@@ -1,0 +1,14 @@
+h5py==3.8.0
+pandas==1.5.3
+numpy==1.24.3 
+matplotlib==3.7.1
+pysteps==1.7.3
+einops==0.3.2
+wandb==0.12.7
+pytorch-lightning==2.0.9
+omegaconf==2.1.2
+hydra-core==1.1.1
+psutil==5.8.0
+tqdm==4.62.3
+protobuf==3.20.*
+transformers==4.37.2

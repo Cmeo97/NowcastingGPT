@@ -1,0 +1,87 @@
+defaults:
+  - _self_
+  - tokenizer: default
+  - world_model: default
+
+
+wandb:
+  mode: online #disabled 
+  project: iris
+  entity: null
+  name: null
+  group: null
+  tags: null
+  notes: null
+
+initialization:
+  path_to_checkpoint:   checkpoints/tokenizer.pt
+  path_to_checkpoint_trans: checkpoints/transformer.pt
+  load_tokenizer: True
+  load_world_model: True
+
+checkpoint_OPT:
+  name_to_checkpoint: checkpoints/optimizer.pt
+  load_opti: True
+
+common:
+  epochs: 60
+  device: cuda
+  batch_size_training: 64
+  batch_size_testing: 1
+  do_checkpoint: True
+  seed: 0
+  obs_time: 3
+  pred_time: 6 
+  time_interval: 30
+  sequence_length: ${world_model.max_blocks}
+  path_to_training_data: /space/ankushroy/Data_9/all_data_train_9.npy
+  # path_to_testing_data:
+  # path_to_validation_data:
+  path_to_testing_data_ext: /space/ankushroy/Data_9/ext_data_final_numpy.npy
+  resume: False
+
+collection:
+  train:
+    stop_after_epochs: 60
+
+training:
+  should: True
+  learning_rate: 0.0001   
+  tokenizer:
+    batch_num_samples: 2 # mini-batch_size
+    grad_acc_steps: 32
+    start_after_epochs: 100 #was 5
+    stop_after_epochs: 200
+  
+  world_model:
+    batch_num_samples: 4 # mini-batch_size
+    grad_acc_steps: 16
+    weight_decay: 0.01
+    start_after_epochs: 0
+    stop_after_epochs: 80
+  
+
+  classifier:
+    batch_num_samples: 4 # mini-batch_size
+    grad_acc_steps: 16
+    start_after_epochs: 0 
+    stop_after_epochs: 80   
+
+evaluation:
+  should: True
+  every: 2
+  tokenizer:
+    batch_num_samples: ${training.tokenizer.batch_num_samples}
+    start_after_epochs: ${training.tokenizer.start_after_epochs}
+    stop_after_epochs: ${training.tokenizer.stop_after_epochs}
+    save_reconstructions: False
+  world_model:
+    batch_num_samples: 1
+    start_after_epochs: ${training.world_model.start_after_epochs}
+    stop_after_epochs: ${training.world_model.stop_after_epochs}
+    save_predictions: True
+  classifier:
+    batch_num_samples: 1
+    start_after_epochs: ${training.classifier.start_after_epochs}
+    stop_after_epochs: ${training.classifier.stop_after_epochs}
+
