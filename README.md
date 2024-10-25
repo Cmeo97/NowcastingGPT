@@ -49,7 +49,7 @@ To set up the NowcastingGPT-EVL model on your system, follow these steps:
    ```
    and finally,
    ``` bash 
-	   pip install lightning-utilities==0.8.0 #(needs to be installed separately since it's a legacy version)
+      pip install lightning-utilities==0.8.0    #(needs to be installed separately since it's a legacy version)
       pip install pycm
    ```
    For their specific case, but also for general instruction:
