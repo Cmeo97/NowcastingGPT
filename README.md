@@ -3,10 +3,10 @@
 ## Overview
 This Github repository contains the code for the model NowcastingGPT-EVL which is a Transformer-based deep generative model for extreme precipitation nowcasting, specifically NowcastingGPT with Extreme Value Loss (EVL) regularization. Utilizing an extensive dataset from the Royal Netherlands Meteorological Institute (KNMI), our research aims to achieve accurate short-term precipitation predictions when compard with other benchmark weather prediction models. We propose an innovative approach to computing EVL that avoids the assumption of fixed extreme representations, overcoming the limitations of existing models in capturing extreme weather events. The link of the research paper is as follows https://arxiv.org/abs/2403.03929.
 
-<img src="./asset/model_architecture.png" title="Model Architecture" width="100" />
-
-<img src="./asset/qualitative_results.png" title="Quantitative Results" width="100" />
-
+<div style="display: flex; justify-content: space-between;">
+  <img src="./asset/model_architecture.png" alt="Image 1" title="Model Architecture" width="250" />
+  <img src="./asset/qualitative_results.png" alt="Image 2" title="Quantitative Results" width="250" />	
+</div>
 
 
 
