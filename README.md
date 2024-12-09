@@ -28,7 +28,7 @@ To set up the NowcastingGPT-EVL model on your system, follow these steps:
 1. **Clone the Repository:**
    Use Git to clone the repository to your local machine. Open your terminal and run the following command:
    ```bash
-   git clone https://github.com/cmeo97/NowcastingGPT.git
+   git clone https://github.com/Cmeo97/NowcastingGPT.git
 
 2. **Navigate to the Project Directory:**
    Change into the project directory using:
